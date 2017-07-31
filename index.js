@@ -66,7 +66,7 @@ function runWebpack(config) {
 
 function runAva(emittedFiles, tap) {
     return new Promise(function (resolve, reject) {
-	exec('ava ' + (tap ? '--tap ' : '') + emittedFiles.join(' '), {},  function (err, stdout, stderr) {
+	exec('electron-ava ' + (tap ? '--tap ' : '') + emittedFiles.join(' '), {},  function (err, stdout, stderr) {
 	    var output = tap ? stdout : stderr;
 
 	    if(err) {
